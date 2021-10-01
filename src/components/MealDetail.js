@@ -56,9 +56,14 @@ export default function MealDetail({ meal }) {
               alt={meal.strMeal}
             />
             <CardContent>
-              <Typography variant="body1" component="div" align="center">
-                Tags : {meal.strTags}
-              </Typography>
+              {meal.strTags ? (
+                <Typography variant="body1" component="div" align="center">
+                  Tags : {meal.strTags}
+                </Typography>
+              ) : (
+                <></>
+              )}
+
               <Typography variant="body2" component="div" align="center">
                 Category : {meal.strCategory}
               </Typography>
@@ -97,14 +102,18 @@ export default function MealDetail({ meal }) {
           </TableContainer>
         </Container>
 
-        <div style={{ margin: "3rem 0" }}>
-          <ReactPlayer
-            url={meal.strYoutube}
-            width="100%"
-            height={400}
-            playing={false}
-          />
-        </div>
+        {meal.strYoutube ? (
+          <div style={{ margin: "3rem 0" }}>
+            <ReactPlayer
+              url={meal.strYoutube}
+              width="100%"
+              height={400}
+              playing={false}
+            />
+          </div>
+        ) : (
+          <></>
+        )}
       </Container>
     </>
   );
