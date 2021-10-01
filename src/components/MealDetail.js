@@ -102,6 +102,15 @@ export default function MealDetail({ meal }) {
           </TableContainer>
         </Container>
 
+        <Container>
+          <Typography variant="h4" align="center" gutterBottom>
+            Intructions
+          </Typography>
+          <Typography variant="body1" align="left" gutterBottom>
+            {meal.strInstructions}
+          </Typography>
+        </Container>
+
         {meal.strYoutube ? (
           <div style={{ margin: "3rem 0" }}>
             <ReactPlayer
